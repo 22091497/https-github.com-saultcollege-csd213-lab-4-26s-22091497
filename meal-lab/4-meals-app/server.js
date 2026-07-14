@@ -7,10 +7,10 @@ const app = express();
 const PORT = 8213;
 
 app.use(express.json());
-// Serve static client files automatically
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 5.2.1 & 5.2.2: Gemini proxy streaming endpoint
+
 app.post('/geminiproxy', (req, res) => {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
@@ -19,7 +19,7 @@ app.post('/geminiproxy', (req, res) => {
 
   const targetUrl = `https://googleapis.com{apiKey}`;
 
-  // Forward incoming body stream directly to Gemini using pipe module method
+ 
   req.pipe(request.post({
     url: targetUrl,
     headers: { 'Content-Type': 'application/json' }

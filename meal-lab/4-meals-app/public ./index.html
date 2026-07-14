@@ -21,19 +21,4 @@
     <script src="app.js"></script>
 </body>
 </html>
-Use code with caution.File 2: Create proxy-test.htmlRight-click on your public folder again and select New File.Name it exactly: proxy-test.html and hit Enter.Paste this code inside and Save it:html<!DOCTYPE html>
-<html>
-<head><title>Proxy Test</title></head>
-<body>
-    <script>
-        fetch('/geminiproxy', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ contents: [{ parts: [{ text: "Hello, world!" }] }] })
-        })
-        .then(res => res.json())
-        .then(data => console.log("Successful Proxy Response:", data))
-        .catch(err => console.error("Proxy Test Error:", err));
-    </script>
-</body>
-</html>
+
