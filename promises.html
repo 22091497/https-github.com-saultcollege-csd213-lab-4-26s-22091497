@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promises Lab Target</title>
+</head>
+<body>
+    <script>
+        // 2.1 - 2.4: Fetching ingredients list with promises
+        fetch("https://themealdb.com")
+            .then(res => {
+                // 2.4.1: Throw error if status is not 200
+                if (res.status !== 200) {
+                    throw new Error(`HTTP Error Status: ${res.status}`);
+                }
+                return res.json();
+            })
+            .then(data => {
+                const list = data.meals;
+                
+                // 2.3: Alphabetical sort
+                list.sort((x, y) => x.strIngredient.localeCompare(y.strIngredient));
+                
+                // 2.2: Print only the names
+                list.forEach(item => {
+                    console.log(item.strIngredient);
+                });
+            })
+            .catch(err => {
+                // 2.4.2.1: Log message on console with status/error info
+                console.log(`Failed operation. Error details: ${err.message}`);
+            });
+    </script>
+</body>
+</html>

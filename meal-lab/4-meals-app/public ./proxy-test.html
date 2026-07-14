@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Proxy Test</title></head>
+<body>
+    <script>
+        fetch('/geminiproxy', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contents: [{ parts: [{ text: "Hello, world!" }] }] })
+        })
+        .then(res => res.json())
+        .then(data => console.log("Successful Proxy Response:", data))
+        .catch(err => console.error("Proxy Test Error:", err));
+    </script>
+</body>
+</html>

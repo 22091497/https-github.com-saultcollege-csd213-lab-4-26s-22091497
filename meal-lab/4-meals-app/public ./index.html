@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Single Page Meal App</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; }
+        #meals-container { display: flex; flex-wrap: wrap; margin-top: 20px; }
+        .recipe-card { border: 1px solid #ccc; padding: 15px; margin: 10px; cursor: pointer; border-radius: 8px; width: 220px; background: #fafafa; }
+        .recipe-card img { max-width: 100%; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Meal Finder SPA</h1>
+    <label for="ingredient-dropdown">Choose an Ingredient: </label>
+    <select id="ingredient-dropdown">
+        <option value="">-- Select --</option>
+    </select>
+
+    <div id="meals-container"></div>
+    <script src="app.js"></script>
+</body>
+</html>
+Use code with caution.File 2: Create proxy-test.htmlRight-click on your public folder again and select New File.Name it exactly: proxy-test.html and hit Enter.Paste this code inside and Save it:html<!DOCTYPE html>
+<html>
+<head><title>Proxy Test</title></head>
+<body>
+    <script>
+        fetch('/geminiproxy', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contents: [{ parts: [{ text: "Hello, world!" }] }] })
+        })
+        .then(res => res.json())
+        .then(data => console.log("Successful Proxy Response:", data))
+        .catch(err => console.error("Proxy Test Error:", err));
+    </script>
+</body>
+</html>
