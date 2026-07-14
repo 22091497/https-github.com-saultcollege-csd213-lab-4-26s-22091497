@@ -35,3 +35,22 @@ I used an AI tool purely as an educational guide and conceptual tutor for this l
 
 * **Tool Configuration:** Gemini Assistant
 * **Implementation Focus:** Used for debugging stream pipe issues and structural answers formatting.
+
+---
+
+## 7. Lab Technical Study Guide
+
+### Core Concept: CORS Foundations
+Cross-Origin Resource Sharing (CORS) is a built-in browser security mechanism enforcing the Same-Origin Policy. Web browsers automatically restrict client-side scripts from reading cross-domain payloads unless the external target explicitly returns an authorization header like `Access-Control-Allow-Origin: *`. The MealDB API implements this open header, enabling direct client fetching, whereas the Gemini API intentionally blocks direct browser access to protect production environment workflows and prevent API key visibility exposures in the network tab.
+
+### Core Concept: Backend Server Proxies
+A server-to-server connection acts completely outside the browser environment sandbox, meaning Node.js execution layers are unaffected by CORS restrictions. By creating an internal middleware proxy route (`/geminiproxy`), our frontend can comfortably query its own local domain origin. The local Express server then handles machine-to-machine data streaming out to third-party endpoints securely using stream pipe methodologies before relaying clean JSON back down to our single-page layout.
+
+### Core Concept: Environment Variable Management
+Sensitive authorization items like a `GEMINI_API_KEY` must never be hardcoded into client-facing client code or committed to public cloud repositories like GitHub. Malicious scanning bots continuously crawl public codebases looking for keys. Utilizing a local `.env` configuration file keeps secrets local to the hosting machine, while adding it to `.gitignore` ensures credentials are never accidentally indexed on remote repositories.
+
+### Core Concept: Development Origin and Port Mismatch
+Opening files via extensions like Live Server binds the runtime viewport assets to an isolated origin pool (such as port 5500). Because relative networking paths point directly back to the host port, a page running on Live Server will attempt to look for the proxy endpoint at the wrong address space (`http://127.0.0`). Running assets natively through our configured Express app port (8213) ensures that the application, proxy routes, and static pages share an identical origin, satisfying browser security validation loops.
+Use code with caution.Step 2: Push the Final Correction to GitHub ClassroomSince you updated a file, you need to sync your cloud repository one last time so your teacher gets this complete version.Paste these three quick commands all at once into your VS Code terminal and hit Enter:bashgit add -A && git commit -m "Add core concept study guide section to reflection" && git push origin main
+Use code with caution.(If it gives you a branch name conflict error, run git push origin master instead).Step 3: Extract Your Final Submission CodeTo get your absolute final tracking code for your school portal, paste this last command into the terminal box:bashgit log -n 1 --format="%H"
+Use code with caution.Copy that final mix of numbers and letters, paste it into your school assignment submission fields alongside your repository URL, and you are 100% finished with the entire lab!Would you like help double-checking your repository URL format before you hit that final submit button on the school portal?
