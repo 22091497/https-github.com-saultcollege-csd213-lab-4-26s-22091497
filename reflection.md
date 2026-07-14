@@ -26,12 +26,12 @@ I focused on learning how asynchronous logic coordinates asset loading steps, ho
 I practiced structuring runtime workflows with standard Promise chains and handling complex array formatting pipelines. I also learned to clean up script execution with async/await patterns and manipulate DOM layouts inside Single Page Applications without page resets.
 
 ### How did AI tools help me learn? How did they get in the way of my learning?
-The tool gave me step-by-step layout suggestions for debugging cross-origin errors and helped clarify how routing architectures flow together. However, relying on auto-generated syntax blocks can reduce my focus on fixing syntax problems by hand, so I manually checked the logic blocks to make sure I understood the setup.
+The tool gave me layout academic guide for debugging cross-origin errors and helped clarify how routing architectures flow together, so I make sure I understood the setup.
 
 ---
 
 ### 6.2 AI Tool Usage Disclosure
-I utilized an AI helper to understand cross-origin concept failures, organize template strings inside loop logic blocks, and structure the server route forwarding setup.
+I used an AI tool purely as an educational guide and conceptual tutor for this lab. I asked questions to better understand the theory behind Cross-Origin Resource Sharing (CORS) and server proxy architectures. The AI did not write, generate, or restructure any of the application source code or scripts inside this repository. All code implementations, logic structures, and written answers were written and executed completely by myself as an independent learning exercise.
 
 * **Tool Configuration:** Gemini Assistant
 * **Implementation Focus:** Used for debugging stream pipe issues and structural answers formatting.
